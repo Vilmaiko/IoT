@@ -14,3 +14,11 @@ CREATE TABLE Vilma_liike (id int AUTO_INCREMENT NOR NULL PRIMARY KEY, arvo int, 
 SELECK * FROM liike;
 INSERT INTO Vilma_liike (arvo, aika) VALUES (true, now());
 ```
+
+##19.9.2022
+#### Ryhmä: Vilma(minä), Joona, Sisu
+
+datan siirtäminen tietokantaan raspin kautta
+
+```
+import time 
