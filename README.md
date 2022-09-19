@@ -22,13 +22,10 @@ datan siirtäminen tietokantaan raspin kautta
 
 ```
 import time
-// pistää kirjaston jossa on koodia aikaa liittyen
+
 while true:
-//"kun on totta" niin pyörittää tätä koodia niin pitkään kun se on false
     try:
-//kokeilee tätä koodia ensmmäisenä jos toimii
        time.sleep(5)
-// tarkoittaa kuinka pitkää nukkuu kunnes pyörittää seuraavan koodin uudestaa
        print("toimii")
     execpt:
 // jos ei toimi niin pyörittää seuraavan koodin niin pitkään kunnes linja 26 toimii
@@ -38,5 +35,24 @@ while true:
 ```
 import RPi.GPIO as GPIO
 import time
+// pistää kirjaston jossa on koodia aikaa liittyen
 
-GPIO.setup
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(7, GPIO.IN)
+
+try:
+    while True:
+        t = time.localtime()
+        aika = time.strftime("%H:%M:%S", t)
+        if GPIO.input(7):
+            print(aika, ": Liikettä")
+            time.sleep(2)
+            // tarkoittaa kuinka pitkään nukkuu kunnes pyörittää seuraavan koodin uudestaa
+        else:
+            print(aika, ": Ei liikettä")
+            time.sleep(2)
+        time.sleep(0.1)
+        
+except:
+   GPIO.cleanup()
+```
