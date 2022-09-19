@@ -21,4 +21,22 @@ INSERT INTO Vilma_liike (arvo, aika) VALUES (true, now());
 datan siirtäminen tietokantaan raspin kautta
 
 ```
-import time 
+import time
+// pistää kirjaston jossa on koodia aikaa liittyen
+while true:
+//"kun on totta" niin pyörittää tätä koodia niin pitkään kun se on false
+    try:
+//kokeilee tätä koodia ensmmäisenä jos toimii
+       time.sleep(5)
+// tarkoittaa kuinka pitkää nukkuu kunnes pyörittää seuraavan koodin uudestaa
+       print("toimii")
+    execpt:
+// jos ei toimi niin pyörittää seuraavan koodin niin pitkään kunnes linja 26 toimii
+        print("Ei toimi...")
+```
+
+```
+import RPi.GPIO as GPIO
+import time
+
+GPIO.setup
