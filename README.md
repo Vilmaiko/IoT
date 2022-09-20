@@ -65,8 +65,11 @@ except:
 ##### Mitä Lyhenteet tarkoittavat?
 
 EEPROM: haihtumatonta puolijohdemuistia, joka voidaan uudelleenkirjoittaa n. 10 000–100 000 kertaa. Circuit poletissa.
+
 UART: eli sarjaliikennepiiri on laitteisto tai mikropiiri, joka muuntaa rinnakkaismuotoista tietoa sarjamuotoiseksi ja päinvastoin.
+
 12C: järjestelmä joka pystyy liittämään useita laitteita yhteen vain kahdella piuhalla.
+
 SIP: IP-puhelinyhteyksien luonnista vastaava tietoliikenneprotokolla. Sen avulla muodostetaan puhelin yhteyksiä.
 
 12C: n ja SIP: n ero on että 12C liittää laitteita yhteen kirjaimellisesti johdoilla ja SIP käyttää erilaisia taajuuksia ja liittää laitteet yhteen.
