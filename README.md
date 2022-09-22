@@ -72,30 +72,6 @@ I2C: Saljaliikenne protokolla, jota käytetään yleisesti anturipohjaisissa pro
 
 SPi: Serial peripheral interface. Tätä yleisesti käytetään, kun halutaan kahden mikro-ohjaimen keskustelevan keskenään.
 
-##### Selvitä mitä koodit.
-
-```
-apt-get update
-clear
-date
-find/ -name esimerrki.txt
-nano example.txt
-poweroff
-raspi-config
-reboot
-shutdown -h now
-shutdown -h 01:22
-startx
-cat esimerkki.txt
-cd7abc/xyz
-ls -l
-mkdir esimerkki.txt
-my XXX
-rm esimerkki.txt
-scp user@10.0.0.32:/some/path/tiedosto.txt
-touch example.txt
-if
-```
 
 ## 22.9. Testit
 ### 1.a. mitä tietokantoja on tk- palvelimella
@@ -104,3 +80,22 @@ SHOW DATABASE;
 ### 1.b miten tietokantataulu muodostetaan
 DESCRIBE liike;
 
+### 2. String + Muuttuja- harjoitus
+toimi... melkein
+
+### 3. DHT 11 -harjoitus
+```
+import time
+import datetime
+import miriadb
+import RPi.GPIO as GPIO
+
+input = 23
+salasana = "hyvasalasana"
+tietokanta = "Vilma_BRlelukauppa"
+odotus_aika = 5
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(InputPin, GPIO.IN)
+
+mariadb(user
