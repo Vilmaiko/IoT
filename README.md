@@ -81,7 +81,7 @@ SHOW DATABASE;
 DESCRIBE liike;
 
 ### 2. String + Muuttuja- harjoitus
-toimi... melkein
+toimii.
 
 ### 3. DHT 11 -harjoitus
 ```
