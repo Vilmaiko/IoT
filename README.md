@@ -95,7 +95,7 @@ rm esimerkki.txt
 scp user@10.0.0.32:/some/path/tiedosto.txt
 touch example.txt
 if
-´´´
+```
 
 ## 22.9. Testit
 ### 1.a. mitä tietokantoja on tk- palvelimella
