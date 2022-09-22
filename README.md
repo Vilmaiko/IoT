@@ -85,17 +85,37 @@ toimi... melkein
 
 ### 3. DHT 11 -harjoitus
 ```
-import time
-import datetime
-import miriadb
+#kirjastot
 import RPi.GPIO as GPIO
+import mariadb
+import time
 
-input = 23
+#muttujat
 salasana = "hyvasalasana"
 tietokanta = "Vilma_BRlelukauppa"
 odotus_aika = 5
 
+#GPIO setup
+GPIO_input = 7
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(InputPin, GPIO.IN)
+GPIO.setup(GPIO_input, GPIO.IN)
 
-mariadb(user
+#Tiekokannan tunnukset
+conn = mariadb.connect(user="root", password = salasana, host = "localhost", database = tietokanta)
+cur = conn.cursor()
+
+try:
+    while True:
+        #arvo on anturin tulos 
+        arvo = GPIO.setup(GPIO_input, GPIO.IN)
+        #mysql stirng on komento joka tallentaa tiedon tietokantaan
+        mysqlstr = f"INSERT INTO liike(arvo, aika) VALUES (arvo, now())"
+        cur.execute(mysqlstr)
+        conn.commit()
+        #odota määritetty aika
+        time.sleep(odotus_aika)
+#virhe report
+except:
+    print("Error")
+    GPIO.cleanup()
+```
