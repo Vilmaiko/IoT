@@ -99,8 +99,8 @@ if
 
 ## 22.9. Testit
 ### 1.a. mitä tietokantoja on tk- palvelimella
-´´´SHOW DATABASE;´´´
+SHOW DATABASE;
 
 ### 1.b miten tietokantataulu muodostetaan
-´´´DESCRIBE liike;´´´
+DESCRIBE liike;
 
