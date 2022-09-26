@@ -119,3 +119,6 @@ except:
     print("Error")
     GPIO.cleanup()
 ```
+
+##26.9.2022
+###
