@@ -15,7 +15,7 @@ SELECK * FROM liike;
 INSERT INTO Vilma_liike (arvo, aika) VALUES (true, now());
 ```
 
-##19.9.2022
+## 19.9.2022
 #### Ryhmä: Vilma(minä), Joona, Sisu
 
 datan siirtäminen tietokantaan raspin kautta
@@ -120,5 +120,58 @@ except:
     GPIO.cleanup()
 ```
 
-##26.9.2022
-###
+## 26.9.2022
+#
+## 29.9.2022
+
+```
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Vilman Varashälytin </title>
+    </head>
+    <body>
+        <?php
+
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname ="Vilma_liike";
+
+        $conn = new mysqli($servername, $username, $password, $"Vilma_BRlelukauppa")
+        if ($conn->connect_error){
+            die("Connection failed: " . $conn->connect_error);
+        }
+        $sql = "SELECT koira, hevonen FROM Vilma_liike";
+        $result = $conn->query($sql);
+
+        while ($row = $result->fetch_assoc()){
+            echo $row["id"]. $row["papukaija"]."<br>";
+        }
+        ?>
+        <div style="border:2px solid black; text-align: center;>
+            <h1><img src="images/testikuva.png" width="50px" height="50px"></h1>
+            <table widht="50%" style="margin: ;auto; border:opx">
+                <tr>
+                    <th> koira </th>
+                    <th> kissa </th>
+                </tr>
+                <tr>
+                    <td> hevonen </td>
+                    <td> papukaija </td>
+                </tr>
+                <tr>
+                    <td> kilpikonna </td>
+                    <td> marsu </td>
+                </tr>
+            </table>
+            <br>
+            <div>
+            powered by Vilma<br>
+            <a href="http://www.salpaus.fi">Koulutuskeskus Salpaus</a>
+            </div>
+        </div>
+    </body>
+</html>
+```
+
