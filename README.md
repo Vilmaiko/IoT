@@ -175,3 +175,14 @@ except:
 </html>
 ```
 
+## 3.10.2022
+Ladattiin mySQL ja luotiin tietokannat jokaiselle.
+```
+CREATE database Ikonen_db
+use Ikonen_db
+CREATE TABLE Ikonen (id int PRIMARY KEY AUTO_INCREMENT NOT NULL, arvo int, aika date time)
+INSERT INTO ikonen (arvo, aika) Values (1, now())
+// toistetaan monta kertaa.
+SELECT * FROM Ikonen
+
+```
