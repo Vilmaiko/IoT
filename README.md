@@ -186,3 +186,54 @@ INSERT INTO ikonen (arvo, aika) Values (1, now())
 SELECT * FROM Ikonen
 
 ```
+```
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Vilman Varashälytin </title>
+    </head>
+    <body>
+        <?php
+
+        $servername = "hyvis.mysql.database.azure.com";
+        $username = "db_projekti";
+        $password = "Sivyh2022";
+        $dbname ="Ikonen_db";
+
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        if($conn->connect_error){
+            die("Connection failed: " . $conn->connect_error);
+        }
+        /*
+        $sql = "SELECT * FROM ikonen";
+        $result = $conn->query($sql);
+
+        while($row = $result->fetch_assoc()){
+            echo $row["id"]. $row["papukaija"]."<br>";
+        }*/
+        ?>
+        <div style="border:2px solid black; text-align: center;>
+            <h1><img src="images/testikuva.png" width="50px" height="50px"></h1>
+            <table widht="50%" style="margin: ;auto; border:opx">
+                <tr>
+                    <th> koira </th>
+                    <th> kissa </th>
+                </tr>
+                <tr>
+                    <td> hevonen </td>
+                    <td> papukaija </td>
+                </tr>
+                <tr>
+                    <td> kilpikonna </td>
+                    <td> marsu </td>
+                </tr>
+            </table>
+            <br>
+            <div>
+            powered by Vilma<br>
+            <a href="http://www.salpaus.fi">Koulutuskeskus Salpaus</a>
+            </div>
+        </div>
+    </body>
+</html>
+```
