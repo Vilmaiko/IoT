@@ -237,3 +237,46 @@ SELECT * FROM Ikonen
     </body>
 </html>
 ```
+
+```
+CREATE TABLE Keskustelu (id int primary key auto_increment, nimi varchar(50), viesti varchar(1000))
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Vilman Varashälytin </title>
+    </head>
+    <body>
+        <?php
+
+        $servername = "hyvis.mysql.database.azure.com";
+        $username = "db_projekti";
+        $password = "Sivyh2022";
+        $dbname ="ikonen_db";
+
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+        
+        $sql = "SELECT * FROM Keskustelu";
+        $result = $conn->query($sql);
+
+        while($row = $result->fetch_assoc()){
+            echo $row["nimi"]. $row["viesti"]."<br>";
+        }
+        ?>
+        
+        
+<?php
+include 'config.php';
+
+$conn = mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$name = $_POST['nimimerkki'];
+```
+        
