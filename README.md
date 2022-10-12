@@ -279,4 +279,112 @@ if ($conn->connect_error) {
 
 $name = $_POST['nimimerkki'];
 ```
+```
+<?php
+
+$servername = "hyvis.mysql.database.azure.com";
+$username = "db_projekti";
+$password = "Sivyh2022";
+$dbname ="Ikonen";
+<
+```
+
+```
+<?php
+include 'config.php';
+
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+$conn = mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$name = $_POST['nimimerkki'];
+$viesti = $_POST['viesti']
+$stmt = $conn->prepare('INSERT INTO keskustelu (nimim, viesti) VALUES (?, ?)');
+$stmt->bind_param('ss', $name, $viesti);
+
+$stmt->execute();
+
+$conn->close();
+
+header("Location: index.php");
+die();
+?>
+
+```
+
+```
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Vilman Varashälytin </title>
+    </head>
+    <body>
+        <?php
+
+        $servername = "hyvis.mysql.database.azure.com";
+        $username = "db_projekti";
+        $password = "Sivyh2022";
+        $dbname ="Ikonen";
+
+        $conn = new mysqli($servername, $username, $password, $dbname)
+        if($conn->connect_error){
+            die("Connection failed: " . $conn->connect_error);
+        }
+        $sql = "SELECT * FROM keskustelut";
+        $result = $conn->query($sql);
+
+        If ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()){
+                echo "<b>".$row["nimim"]. "</b><br>" . $row["viesti"]. "<br><br>";
+
+            }
+        }
+    $conn->close(); 
+     ?>
+        <form action="handle.php" method="post">
+            Nimimerkki: <input type="text" name="nimimerkki"><br>
+            Viesti: <textarea name="viesti"></textarea><br>
+            <input type="submit">
+        </form>
+    </body>
+</html>
+```
+
+```
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Vilman Varashälytin </title>
+    </head>
+    <body>
+        <?php
+
+        $servername = "hyvis.mysql.database.azure.com";
+        $username = "db_projekti";
+        $password = "Sivyh2022";
+        $dbname ="ikonen_db";
+
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
         
+        $sql = "SELECT * FROM Keskustelu";
+        $result = $conn->query($sql);
+
+        while($row = $result->fetch_assoc()){
+            echo $row["nimi"]. $row["viesti"]."<br>";
+        }
+        ?>
+
+    <form action="handle.php" method="post">
+        Nimimerkki: <input type="text" name="nimimerkki"><br>
+        Viesti: <textarea name="viesti"></textarea><br>
+        <input type="submit">
+    </form>     
+    </body>
+</html>        
+```
