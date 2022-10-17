@@ -120,10 +120,6 @@ except:
     GPIO.cleanup()
 ```
 
-## 26.9.2022
-#
-## 29.9.2022
-
 ```
 <!DOCTYPE html>
 <html>
@@ -176,7 +172,7 @@ except:
 ```
 
 ## 3.10.2022
-Ladattiin mySQL ja luotiin tietokannat jokaiselle.
+#Ladattiin mySQL ja luotiin tietokannat jokaiselle.
 ```
 CREATE database Ikonen_db
 use Ikonen_db
